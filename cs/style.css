@@ -121,3 +121,19 @@ canvas {
   line-height: 1.8;
   color: #e9d5ff;
 }
+/* 🎬 Video Section */
+.video-section {
+  height: 60vh; /* Adjust height as you like */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000; /* fallback background */
+}
+
+.video-section video {
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(200,200,255,0.5);
+}
