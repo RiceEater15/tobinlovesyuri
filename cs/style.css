@@ -7,7 +7,9 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-body {
+html, body {
+  width: 100%;
+  height: 100%;
   background: black;
   color: white;
   overflow-x: hidden;
@@ -18,6 +20,7 @@ body {
 .hero {
   position: relative;
   height: 100vh;
+  width: 100%;
   background:
     linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.9)),
     url("ALYA_IMAGE_URL_HERE") center/cover no-repeat;
@@ -25,19 +28,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+/* ⭐ Canvas */
+canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 /* ✨ Title */
 .title {
+  position: relative;
+  z-index: 2;
   font-size: 4rem;
-  letter-spacing: 3px;
-  text-shadow: 0 0 30px rgba(180,120,255,0.9);
+  letter-spacing: 4px;
+  text-shadow:
+    0 0 10px #a855f7,
+    0 0 25px #c084fc,
+    0 0 45px #e9d5ff;
   animation: glow 3s infinite alternate;
 }
 
 @keyframes glow {
-  from { text-shadow: 0 0 10px #a855f7; }
-  to { text-shadow: 0 0 35px #e9d5ff; }
+  from { opacity: 0.85; }
+  to { opacity: 1; }
 }
 
 /* ☰ Glass Menu */
@@ -45,16 +61,16 @@ body {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 999;
+  z-index: 10;
 }
 
 .menu button {
   backdrop-filter: blur(12px);
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
   color: white;
   padding: 12px 16px;
-  border-radius: 12px;
+  border-radius: 14px;
   font-size: 18px;
   cursor: pointer;
 }
@@ -63,8 +79,8 @@ body {
 .dropdown {
   display: none;
   margin-top: 12px;
+  background: rgba(10,0,25,0.75);
   backdrop-filter: blur(14px);
-  background: rgba(0,0,0,0.55);
   border-radius: 14px;
   overflow: hidden;
 }
@@ -74,28 +90,19 @@ body {
   padding: 14px 18px;
   color: white;
   text-decoration: none;
-  transition: background 0.25s;
 }
 
 .dropdown a:hover {
   background: rgba(255,255,255,0.15);
 }
 
-/* ⭐ Canvas */
-canvas {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
 /* ⬇️ Credits */
 .credits {
   height: 100vh;
-  background: linear-gradient(to bottom, #05010a, #120624);
+  background: linear-gradient(to bottom, #02000a, #12001f);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
 }
 
 .credits-box {
@@ -110,7 +117,7 @@ canvas {
 }
 
 .credits p {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   line-height: 1.8;
   color: #e9d5ff;
 }
